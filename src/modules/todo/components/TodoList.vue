@@ -40,8 +40,8 @@ onMounted(() => {
 })
 
 function getQueryPageNumber(): number {
-  const queryPage = route.query.page
-  return queryPage === null ? FIRST_PAGE_PAGINATION : +queryPage
+  const queryPage: any = route.query.page
+  return +queryPage || FIRST_PAGE_PAGINATION
 }
 
 watch(currentPage, () => {
