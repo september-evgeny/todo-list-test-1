@@ -1,6 +1,4 @@
-import { MAIN_URL } from '@/main/constants';
-import { MAIN_TITLE } from '@/main/constants';
-import { MAIN_ROUTE_NAME } from '@/main/constants';
+import { MAIN_URL, MAIN_TITLE, MAIN_ROUTE_NAME } from '@/main/constants';
 import { RouteRecordRaw } from 'vue-router'
 
 export const mainRoutes: RouteRecordRaw[] = [

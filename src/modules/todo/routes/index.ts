@@ -1,6 +1,4 @@
-import { TODO_URL } from '@/todo/constants';
-import { TODO_TITLE } from '@/todo/constants';
-import { TODO_ROUTE_NAME } from '@/todo/constants';
+import { TODO_URL, TODO_TITLE, TODO_ROUTE_NAME } from '@/todo/constants';
 import { RouteRecordRaw } from 'vue-router'
 
 export const todoRoutes: RouteRecordRaw[] = [
