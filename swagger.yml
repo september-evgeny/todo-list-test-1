@@ -1,0 +1,81 @@
+openapi: 3.0.0
+info:
+  title: Todo List API
+  version: 1.0.0
+servers:
+  - url: http://localhost:4000/api/v1
+paths:
+  /todos:
+    get:
+      summary: Get a list of todos
+      parameters:
+        - name: page
+          in: query
+          description: Page number to retrieve
+          required: false
+          schema:
+            type: integer
+            minimum: 1
+        - name: limit
+          in: query
+          description: Number of items per page
+          required: false
+          schema:
+            type: integer
+            minimum: 1
+            maximum: 100
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  todos:
+                    type: array
+                    items:
+                      $ref: '#/components/schemas/Todo'
+                  totalPages:
+                    type: integer
+                    minimum: 1
+                  currentPage:
+                    type: integer
+                    minimum: 1
+    post:
+      summary: Create a new todo
+      requestBody:
+        description: Todo object to be created
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/TodoInput'
+      responses:
+        '201':
+          description: Created
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Todo'
+components:
+  schemas:
+    Todo:
+      type: object
+      properties:
+        id:
+          type: integer
+          example: 34852
+        title:
+          type: string
+          example: 'test todo'
+      required:
+        - title
+    TodoInput:
+      type: object
+      properties:
+        title:
+          type: string
+          example: 'second todo'
+      required:
+        - title

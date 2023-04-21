@@ -1,0 +1,1 @@
+export const FIRST_PAGE_PAGINATION: number = 1
