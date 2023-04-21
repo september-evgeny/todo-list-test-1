@@ -36,7 +36,7 @@ const { todos, currentPage, totalPages, perPage, isLoading } =
   storeToRefs(todoStore)
 
 onMounted(() => {
-  fetchTodos(getQueryPageNumber())
+  currentPage.value = getQueryPageNumber()
 })
 
 function getQueryPageNumber(): number {

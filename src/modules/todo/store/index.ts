@@ -6,7 +6,7 @@ import { FIRST_PAGE_PAGINATION } from '@/common/constants';
 
 export const useTodoStore = defineStore('todo', () => {
   const todos = ref<ITodoItem[]>([])
-  const currentPage = ref<number>(FIRST_PAGE_PAGINATION)
+  const currentPage = ref<number>(0)
   const totalPages = ref<number>(10)
   const isLoading = ref<boolean>(false)
   const perPage = ref<number>(8)
